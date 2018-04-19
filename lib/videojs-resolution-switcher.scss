@@ -1,0 +1,31 @@
+.vjs-resolution-button {
+  .vjs-icon-placeholder:before {
+    content: '\f110';
+    font-family: VideoJS;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.8em;
+    line-height: 1.67em;
+  }
+
+  .vjs-icon-placeholder:before {
+    content: '\f110';
+    font-family: VideoJS;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.8em;
+    line-height: 1.67em;
+  }
+  .vjs-menu {
+    .vjs-menu-content {
+      width: 4em;
+      left: 50%; /* Center the menu, in it's parent */
+      margin-left: -2em; /* half of width, to center */
+    }
+
+    li {
+      text-transform: none;
+      font-size: 1em;
+    }
+  }
+}

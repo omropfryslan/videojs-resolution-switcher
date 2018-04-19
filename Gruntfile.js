@@ -52,6 +52,26 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       }
     },
+    sass: {
+      options: {
+        outputStyle: 'expanded',
+        sourcemap: 'true'
+      },
+      dist: {
+        files: {
+          'dist/videojs-resolution-switcher.css': 'lib/*.scss',
+        }
+      }
+    },
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: 'dist',
+        src: ['*.css'],
+        dest: 'dist',
+        ext: '.min.css'
+      }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -74,14 +94,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.registerTask('default',
                      ['clean',
                       'jshint',
                       'qunit',
+                      'sass',
+                      'cssmin',
                       'concat',
                       'uglify']);
-  
+
   grunt.registerTask('test', [
     'jshint'
   ]);
